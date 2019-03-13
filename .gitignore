@@ -17,7 +17,12 @@
 *.ear
 *.zip
 *.tar.gz
-*.rar
+# 忽略项目文件.iml
+*.iml
+# 忽略.idea文件夹
+.idea/
+# 忽略生成打包生成的target目录下所有文件
+target/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
