@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * Convert Integer to roman number
  * @author dujiayong
  * @date 2019/03/27
  **/
@@ -28,6 +29,11 @@ public class Solution {
         map.put(900, "CM");
     }
 
+    /**
+     * 方式1:
+     * @param num
+     * @return
+     */
     public static String intToRoman(int num) {
         StringBuilder builder = new StringBuilder();
         int[] nums = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
@@ -44,6 +50,11 @@ public class Solution {
         return builder.toString();
     }
 
+    /**
+     * 方式2：推荐
+     * @param num
+     * @return
+     */
     public static String intToRoman2(int num) {
         String M[] = {"", "M", "MM", "MMM"};
         String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
@@ -52,6 +63,12 @@ public class Solution {
         return M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];
     }
 
+    /**
+     * 方式3：采用TreeMap形式
+     * @param num
+     * @see java.util.TreeMap#floorEntry(Object)
+     * @return
+     */
     public static String intToRoman3(int num){
         StringBuilder builder = new StringBuilder();
         while (num != 0){
