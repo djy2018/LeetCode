@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * 解决类
  * @author dujiayong
  * @date 2019/03/27
  **/
@@ -55,6 +56,7 @@ public class Solution {
     public static String intToRoman3(int num){
         StringBuilder builder = new StringBuilder();
         while (num != 0){
+            // floorEntry方法取最接近于Key的值
             Map.Entry<Integer, String> entry = map.floorEntry(num);
             builder.append(entry.getValue());
             num -= entry.getKey();
