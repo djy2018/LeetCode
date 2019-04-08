@@ -24,7 +24,10 @@ public class Solution {
             for (int start = 0, end = minLenStr.length() - i; end < minLenStr.length() + 1; start++, end++) {
                 // 子串
                 String subStr = minLenStr.substring(start, end);
-                if(isContainSubStr(strs,subStr)) return subStr;
+                if(isContainSubStr(strs,subStr)) {
+                    return subStr;
+                }
+
             }
         }
         return "";
@@ -32,7 +35,9 @@ public class Solution {
 
     private static boolean isContainSubStr(String[] strs, String subStr) {
         for (int i = 0; i < strs.length; i++) {
-            if (strs[i].indexOf(subStr) != 0) return false;
+            if(strs[i].indexOf(subStr) != 0) {
+                return false;
+            }
         }
         return true;
     }
